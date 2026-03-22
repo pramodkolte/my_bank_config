@@ -1,9 +1,4 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/audit_db
-
-logging:
-  config: classpath:logback-spring.xml
-  file:
-    path: /app/logs
+      uri: mongodb://mongodb:27017/audit_db
