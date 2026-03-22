@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/identity_db
+    username: mybank_user
+    password: mybank_password
+
+app:
+  jwt:
+    secret: "4A64327A5F4B65795365637265745F5374726F6E6747656E657261746564537472696E67313233" # 256-bit Hex Key for Development
+    expiration-ms: 3600000
+
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: /app/logs

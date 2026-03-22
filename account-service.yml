@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/account_db
+    username: mybank_user
+    password: mybank_password
+
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: /app/logs
