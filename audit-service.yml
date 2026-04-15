@@ -1,4 +1,4 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://audit_user:${MONGO_DB_PASSWORD}@${MONGO_DB_CLUSTER:mongodb}/audit_db?retryWrites=true&w=majority
+      uri: mongodb+srv://audit_user:${MONGO_DB_PASSWORD}@cluster0.i0yrvwb.mongodb.net/audit_db?retryWrites=true&w=majority&appName=Cluster0
