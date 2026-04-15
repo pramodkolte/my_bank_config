@@ -3,11 +3,6 @@ spring:
     gateway:
       server:
         webflux:
-          default-filters:
-            - name: RequestRateLimiter
-              args:
-                rate-limiter: "#{@inMemoryRateLimiter}"
-                key-resolver: "#{@userKeyResolver}"
           routes:
             - id: discovery-server
               uri: http://discovery-server:8761
