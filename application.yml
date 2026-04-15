@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres-db:5432/postgres
-    username: postgres
-    password: ${DB_PASSWORD:postgres}
+    url: jdbc:postgresql://${RDS_DB_HOST:postgres-db}:${RDS_DB_PORT:5432}/postgres
+    username: pk_admin
+    password: ${RDS_DB_PASSWORD:postgres}
   jpa:
     open-in-view: false
     hibernate:
