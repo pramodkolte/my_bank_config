@@ -9,13 +9,19 @@ spring:
               predicates:
                 - Path=/api/v1/discovery/**
               filters:
-                - RewritePath=/api/v1/discovery/(?<segment>.*), /$\{segment}
+                - name: RewritePath
+                  args:
+                    regexp: /api/v1/discovery/(?<segment>.*)
+                    replacement: /$\{segment}
             - id: config-server
               uri: http://config-server:9191
               predicates:
                 - Path=/api/v1/config/**
               filters:
-                - RewritePath=/api/v1/config/(?<segment>.*), /$\{segment}
+                - name: RewritePath
+                  args:
+                    regexp: /api/v1/config/(?<segment>.*)
+                    replacement: /$\{segment}
             - id: identity-service
               uri: lb://identity-service
               predicates:
