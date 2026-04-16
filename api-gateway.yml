@@ -7,45 +7,31 @@ spring:
             - id: discovery-server
               uri: http://discovery-server:8761
               predicates:
-                - name: Path
-                  args:
-                    patterns: /api/v1/discovery/**
+                - Path=/api/v1/discovery/**
             - id: config-server
               uri: http://config-server:9191
               predicates:
-                - name: Path
-                  args:
-                    patterns: /api/v1/config/**
+                - Path=/api/v1/config/**
             - id: identity-service
               uri: lb://identity-service
               predicates:
-                - name: Path
-                  args:
-                    patterns: /api/v1/identity/**
+                - Path=/api/v1/identity/**
             - id: account-service
               uri: lb://account-service
               predicates:
-                - name: Path
-                  args:
-                    patterns: /api/v1/accounts/**
+                - Path=/api/v1/accounts/**
             - id: transaction-service
               uri: lb://transaction-service
               predicates:
-                - name: Path
-                  args:
-                    patterns: /api/v1/transactions/**
+                - Path=/api/v1/transactions/**
             - id: notification-service
               uri: lb://notification-service
               predicates:
-                - name: Path
-                  args:
-                    patterns: /api/v1/notifications/**
+                - Path=/api/v1/notifications/**
             - id: audit-service
               uri: lb://audit-service
               predicates:
-                - name: Path
-                  args:
-                    patterns: /api/v1/audit/**
+                - Path=/api/v1/audit/**
   cache:
     type: simple
 
