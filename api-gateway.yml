@@ -9,43 +9,43 @@ spring:
               predicates:
                 - name: Path
                   args:
-                    pattern: /api/v1/discovery/**
+                    patterns: /api/v1/discovery/**
             - id: config-server
               uri: http://config-server:9191
               predicates:
                 - name: Path
                   args:
-                    pattern: /api/v1/config/**
+                    patterns: /api/v1/config/**
             - id: identity-service
               uri: lb://identity-service
               predicates:
                 - name: Path
                   args:
-                    pattern: /api/v1/identity/**
+                    patterns: /api/v1/identity/**
             - id: account-service
               uri: lb://account-service
               predicates:
                 - name: Path
                   args:
-                    pattern: /api/v1/accounts/**
+                    patterns: /api/v1/accounts/**
             - id: transaction-service
               uri: lb://transaction-service
               predicates:
                 - name: Path
                   args:
-                    pattern: /api/v1/transactions/**
+                    patterns: /api/v1/transactions/**
             - id: notification-service
               uri: lb://notification-service
               predicates:
                 - name: Path
                   args:
-                    pattern: /api/v1/notifications/**
+                    patterns: /api/v1/notifications/**
             - id: audit-service
               uri: lb://audit-service
               predicates:
                 - name: Path
                   args:
-                    pattern: /api/v1/audit/**
+                    patterns: /api/v1/audit/**
   cache:
     type: simple
 
