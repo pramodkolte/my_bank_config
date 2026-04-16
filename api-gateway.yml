@@ -1,37 +1,35 @@
 spring:
   cloud:
     gateway:
-      server:
-        webflux:
-          routes:
-            - id: discovery-server
-              uri: http://discovery-server:8761
-              predicates:
-                - Path=/api/v1/discovery/**
-            - id: config-server
-              uri: http://config-server:9191
-              predicates:
-                - Path=/api/v1/config/**
-            - id: identity-service
-              uri: lb://identity-service
-              predicates:
-                - Path=/api/v1/identity/**
-            - id: account-service
-              uri: lb://account-service
-              predicates:
-                - Path=/api/v1/accounts/**
-            - id: transaction-service
-              uri: lb://transaction-service
-              predicates:
-                - Path=/api/v1/transactions/**
-            - id: notification-service
-              uri: lb://notification-service
-              predicates:
-                - Path=/api/v1/notifications/**
-            - id: audit-service
-              uri: lb://audit-service
-              predicates:
-                - Path=/api/v1/audit/**
+      routes:
+        - id: discovery-server
+          uri: http://discovery-server:8761
+          predicates:
+            - Path=/api/v1/discovery/**
+        - id: config-server
+          uri: http://config-server:9191
+          predicates:
+            - Path=/api/v1/config/**
+        - id: identity-service
+          uri: lb://identity-service
+          predicates:
+            - Path=/api/v1/identity/**
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/api/v1/accounts/**
+        - id: transaction-service
+          uri: lb://transaction-service
+          predicates:
+            - Path=/api/v1/transactions/**
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/v1/notifications/**
+        - id: audit-service
+          uri: lb://audit-service
+          predicates:
+            - Path=/api/v1/audit/**
   cache:
     type: simple
 
