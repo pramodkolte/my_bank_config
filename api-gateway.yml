@@ -10,22 +10,12 @@ spring:
                 - name: Path
                   args:
                     pattern: /api/v1/discovery/**
-              filters:
-                - name: RewritePath
-                  args:
-                    regexp: /api/v1/discovery/(?<segment>.*)
-                    replacement: /$\{segment}
             - id: config-server
               uri: http://config-server:9191
               predicates:
                 - name: Path
                   args:
                     pattern: /api/v1/config/**
-              filters:
-                - name: RewritePath
-                  args:
-                    regexp: /api/v1/config/(?<segment>.*)
-                    replacement: /$\{segment}
             - id: identity-service
               uri: lb://identity-service
               predicates:
