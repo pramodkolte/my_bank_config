@@ -35,6 +35,15 @@ management:
       os:
         enabled: true
 
+spring:
+  cloud:
+    aws:
+      region:
+        static: ap-south-1
+      credentials:
+        use-default-aws-credentials-chain: true
+
+
 eureka:
   client:
     serviceUrl:
