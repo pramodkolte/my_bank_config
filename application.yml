@@ -19,3 +19,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/
+
+app:
+  jwt:
+    secret: "EMzbaGKrvbCeLk0Dd4abxYzVVPRADP1tJ7+vISyETcY="
+    expiration-ms: 3600000
